@@ -1,7 +1,7 @@
 package edu.employee.controller;
 
 import edu.employee.entity.Employee;
-import edu.employee.model.EmployeeDto;
+import edu.employee.dto.EmployeeDto;
 import edu.employee.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +27,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/employees/{id}")
-    Employee updateEmployeeById(@PathVariable Long id, @RequestBody EmployeeDto employeeDto){
+    EmployeeDto updateEmployeeById(@PathVariable Long id, @RequestBody EmployeeDto employeeDto){
         return employeeService.updateEmployeeById(id, employeeDto);
     }
 

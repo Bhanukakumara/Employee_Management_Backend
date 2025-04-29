@@ -1,4 +1,4 @@
-package edu.employee.model;
+package edu.employee.dto;
 
 import edu.employee.utill.Department;
 import lombok.AllArgsConstructor;
