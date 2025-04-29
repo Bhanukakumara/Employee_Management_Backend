@@ -50,12 +50,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeDto deleteEmployeeByEmail(String email) {
+        employeeRepository.deleteByEmail(email);
         return null;
     }
 
     @Override
     public EmployeeDto updateEmployeeById(Long id, EmployeeDto employeeDto) {
-        return null;
+        EmployeeDto employeeDto1 = searchEmployeeById(id);
+        employeeDto1.setName(employeeDto.getName());
+        employeeDto1.setDepartment(employeeDto.getDepartment());
+        employeeDto1.setEmail(employeeDto.getEmail());
+        employeeRepository.save(modelMapper.map(employeeDto1, Employee.class));
+        return employeeDto1;
     }
 
     @Override
