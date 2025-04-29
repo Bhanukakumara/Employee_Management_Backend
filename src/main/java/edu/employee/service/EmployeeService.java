@@ -8,7 +8,9 @@ import java.util.List;
 public interface EmployeeService {
     Employee createEmployee(EmployeeDto employeeDto);
     List<Employee> getAll();
-    Employee searchByEmail(String email);
+    Employee searchEmployeeByEmail(String email);
     Employee updateEmployeeByEmail(EmployeeDto employeeDto);
-    Employee deleteByEmail(String email);
+    Employee deleteEmployeeByEmail(String email);
+    Employee updateEmployeeById(Long id);
+    void deleteEmployeeById(Long id);
 }
