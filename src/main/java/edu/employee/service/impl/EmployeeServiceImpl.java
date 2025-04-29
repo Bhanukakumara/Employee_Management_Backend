@@ -39,6 +39,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public EmployeeDto searchEmployeeById(Long id) {
+        return modelMapper.map(employeeRepository.findById(id), EmployeeDto.class);
+    }
+
+    @Override
     public EmployeeDto updateEmployeeByEmail(EmployeeDto employeeDto) {
         return null;
     }
@@ -49,12 +54,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeDto updateEmployeeById(Long id) {
+    public EmployeeDto updateEmployeeById(Long id, EmployeeDto employeeDto) {
         return null;
     }
 
     @Override
     public void deleteEmployeeById(Long id) {
-
+        employeeRepository.deleteById(id);
     }
 }
