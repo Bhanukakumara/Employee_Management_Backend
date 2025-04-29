@@ -7,10 +7,10 @@ import java.util.List;
 
 public interface EmployeeService {
     Employee createEmployee(EmployeeDto employeeDto);
-    List<Employee> getAll();
-    Employee searchEmployeeByEmail(String email);
-    Employee updateEmployeeByEmail(EmployeeDto employeeDto);
-    Employee deleteEmployeeByEmail(String email);
-    Employee updateEmployeeById(Long id);
+    List<EmployeeDto> getAll();
+    EmployeeDto searchEmployeeByEmail(String email);
+    EmployeeDto updateEmployeeByEmail(EmployeeDto employeeDto);
+    EmployeeDto deleteEmployeeByEmail(String email);
+    EmployeeDto updateEmployeeById(Long id);
     void deleteEmployeeById(Long id);
 }
